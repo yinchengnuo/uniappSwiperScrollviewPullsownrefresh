@@ -1,6 +1,6 @@
 # uniappSwiperScrollviewPullsownrefresh
 
-#### uniapp 左右滑动切换切换， scrollview 下拉刷新
+#### uniapp 左右滑动切换， scrollview 下拉刷新
 
 ![1](https://raw.githubusercontent.com/yinchengnuo/uniappSwiperScrollviewPullsownrefresh/master/static/1.jpg) 
 
