@@ -54,7 +54,7 @@
 				const timer = setInterval(() => {
 					this.pulldownRefreshingTop += 4
 					if (this.pulldownRefreshingTop >= this.pullDownRefreshDistance) {
-						this.pulldownRefreshingTop = 80
+						this.pulldownRefreshingTop = this.pullDownRefreshDistance
 						clearInterval(timer)
 					}
 				}, 10)
