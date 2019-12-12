@@ -29,6 +29,7 @@
 				</swiper>
 			</pulldown-refresher>
 		</view>
+		<button class="pulldownrefresh" @tap="pulldownrefresh" type="primary">下拉刷新</button>
 	</view>
 </template>
 
@@ -158,16 +159,16 @@
 			$offset(selector) { // 获取组件内元素的 offset 信息
 				return new Promise(resolve => uni.createSelectorQuery().in(this).select(selector).boundingClientRect(data => resolve(data)).exec())
 			},
-			$toast(message) {
-				plus.nativeUI.closeToast()
-				const html = `<font style=\"font-size: 16px; text-align: center; color: #FFFFFF;\"> ${message} </font>`
-				plus.nativeUI.toast(html, { type:'richtext', duration: 'long', verticalAlign: "center", background: "rgba(0, 0, 0, .6)" })
-			},
 			refresh() { // 下拉刷新
 				setTimeout(() => {
 					this.$refs.pulldownRefresher.pullup()
-					this.$toast('刷新成功')
-				}, 567)
+				}, 1234)
+			},
+			pulldownrefresh() {
+				this.$refs.pulldownRefresher.pulldown()
+				setTimeout(() => {
+					this.$refs.pulldownRefresher.pullup()
+				}, 1234)
 			}
 		}
 	}
@@ -187,6 +188,13 @@
 			width: 100%;
 			background: #007AFF;
 			height: var(--status-bar-height);
+		}
+		.pulldownrefresh {
+			left: 50%;
+			bottom: 0;
+			z-index: 1;
+			position: fixed;
+			transform: translateX(-50%);
 		}
 		.nav-area {
 			width: 100%;
