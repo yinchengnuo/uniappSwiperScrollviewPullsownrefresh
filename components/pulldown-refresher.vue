@@ -55,6 +55,8 @@
 					this.pulldownRefreshingTop += 4
 					if (this.pulldownRefreshingTop >= this.pullDownRefreshDistance) {
 						this.pulldownRefreshingTop = this.pullDownRefreshDistance
+						this.pulldownRefreshing = true
+						this.$emit('pulldownRefresh')
 						clearInterval(timer)
 					}
 				}, 10)
